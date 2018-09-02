@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    // halo 
+    // halo
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="209dp"
