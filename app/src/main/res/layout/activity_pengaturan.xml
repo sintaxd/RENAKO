@@ -7,6 +7,9 @@
     tools:context=".PengaturanActivity"
     tools:layout_editor_absoluteY="50dp">
 
+    <!-- aaaa-->
+
+    
     <ImageView
         android:id="@+id/imgPerson_Setting"
         android:layout_width="56dp"
