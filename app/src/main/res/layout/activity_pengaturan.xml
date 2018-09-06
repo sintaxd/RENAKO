@@ -9,7 +9,7 @@
 
     <!-- aaaa-->
 
-    
+
     <ImageView
         android:id="@+id/imgPerson_Setting"
         android:layout_width="56dp"

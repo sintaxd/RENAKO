@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".RegisterActivity" />
-        <activity android:name=".PengaturanActivity"></activity>
+        <activity android:name=".PengaturanActivity" />
+        <activity android:name=".EditKataSandiActivity"></activity>
     </application>
 
 </manifest>
