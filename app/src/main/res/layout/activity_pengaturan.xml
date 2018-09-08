@@ -5,45 +5,57 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".PengaturanActivity"
-    tools:layout_editor_absoluteY="50dp">
-
-    <!-- aaaa-->
-
+    tools:layout_editor_absoluteY="25dp">
 
     <ImageView
         android:id="@+id/imgPerson_Setting"
         android:layout_width="56dp"
         android:layout_height="48dp"
-        app:srcCompat="@drawable/person"
-        tools:layout_editor_absoluteX="48dp"
-        tools:layout_editor_absoluteY="68dp" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.133"
+        app:srcCompat="@drawable/person" />
 
     <ImageView
         android:id="@+id/imgLock_Setting"
         android:layout_width="57dp"
         android:layout_height="44dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintTop_toBottomOf="@+id/imgPerson_Setting"
-        app:srcCompat="@drawable/lock"
-        tools:layout_editor_absoluteX="48dp" />
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.102"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.284"
+        app:srcCompat="@drawable/lock" />
 
     <TextView
         android:id="@+id/txtUbahKataSandi_Pengaturan"
         android:layout_width="174dp"
         android:layout_height="31dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="304dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Ubah Password"
+        android:text="Ubah Kata Sandi"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.123"
-        app:layout_constraintStart_toEndOf="@+id/imgLock_Setting"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.301" />
+        app:layout_constraintVertical_bias="0.7"
+        android:onClick="txtUbahKataSandi_Pengaturan"/>
 
     <TextView
         android:id="@+id/txtUbahProfile_Pengaturan"
@@ -51,16 +63,15 @@
         android:layout_height="30dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="Ubah Profile"
         android:textAlignment="viewStart"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/imgPerson_Setting"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.141" />
+        app:layout_constraintVertical_bias="0.143" />
 
 </android.support.constraint.ConstraintLayout>

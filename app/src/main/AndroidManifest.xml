@@ -20,7 +20,7 @@
         </activity>
         <activity android:name=".RegisterActivity"/>
         <activity android:name=".PengaturanActivity" />
-        <activity android:name=".EditKataSandiActivity"></activity>
+        <activity android:name=".EditKataSandiActivity" android:parentActivityName=".PengaturanActivity"></activity>
     </application>
 
 </manifest>
