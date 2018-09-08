@@ -8,19 +8,17 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:theme="@style/AppFullScreenTheme">
-
+        android:theme="@android:style/Theme.Light.NoTitleBar">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-        <activity android:name=".RegisterActivity"/>
+        <activity android:name=".RegisterActivity" />
         <activity android:name=".PengaturanActivity" />
-        <activity android:name=".EditKataSandiActivity" android:parentActivityName=".PengaturanActivity"></activity>
+        <activity android:name=".EditKataSandiActivity"></activity>
     </application>
 
 </manifest>
