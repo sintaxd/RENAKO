@@ -7,7 +7,7 @@
     tools:context=".TambahResep">
 
     <EditText
-        android:id="@+id/txtCaraMemasak"
+        android:id="@+id/txtCaraMemasak_TambahResep"
         android:layout_width="345dp"
         android:layout_height="83dp"
         android:layout_marginBottom="8dp"
@@ -24,10 +24,10 @@
         app:layout_constraintVertical_bias="0.867" />
 
     <EditText
-        android:id="@+id/txtAlatBahan"
+        android:id="@+id/txtAlatBahan_TambahResep"
         android:layout_width="345dp"
-        android:layout_height="83dp"
-        android:layout_marginBottom="8dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="202dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
@@ -37,11 +37,11 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
         app:layout_constraintVertical_bias="0.585" />
 
     <Button
-        android:id="@+id/btnUnggah"
+        android:id="@+id/btnUnggah_tambahResep"
         android:layout_width="129dp"
         android:layout_height="30dp"
         android:layout_marginBottom="8dp"
@@ -135,7 +135,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:ems="10"
@@ -144,17 +144,24 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.035" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="129dp"
-        android:layout_height="97dp"
-        app:srcCompat="@drawable/logo_renako"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="26dp" />
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="159dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="26dp"
+        app:layout_constraintBottom_toTopOf="@+id/txtAlatBahan_TambahResep"
+        app:layout_constraintEnd_toStartOf="@+id/txtNama_Masakan"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/logo_renako" />
 
     <Spinner
         android:id="@+id/spinner"
@@ -163,9 +170,12 @@
         android:layout_marginBottom="320dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/btnCancel"

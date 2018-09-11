@@ -12,18 +12,6 @@ public class EditKataSandiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_edit_kata_sandi);
 
         getSupportActionBar().setTitle("Ubah Kata Sandi");
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    }
-
-    public boolean onOptionItemSelected(MenuItem item)
-    {
-        int id = item.getItemId();
-
-        if(id == android.R.id.home)
-        {
-            this.finish();
-        }
-        return super.onOptionsItemSelected(item);
     }
 }

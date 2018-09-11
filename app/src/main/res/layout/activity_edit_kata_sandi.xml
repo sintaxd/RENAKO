@@ -17,14 +17,13 @@
         android:layout_marginTop="8dp"
         android:background="@color/red"
         android:textColor="#FFFFFF"
-        android:text="Button"
+        android:text="Simpan"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.808"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.828"
-        tools:text="Daftar" />
+        app:layout_constraintVertical_bias="0.828"/>
 
     <Button
         android:id="@+id/btnBatal_EKS"
