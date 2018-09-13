@@ -23,12 +23,8 @@ public class PengaturanActivity extends AppCompatActivity {
             }
         });
 
-    /*
-        belum bisa dibikin, soalnya main menunya blm ada
-
         getSupportActionBar().setTitle("Pengaturan");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-    */
 
     }
     public void openEditKataSandiClass()

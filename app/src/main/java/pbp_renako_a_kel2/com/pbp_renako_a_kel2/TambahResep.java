@@ -11,5 +11,8 @@ public class TambahResep extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tambah_resep);
+
+        getSupportActionBar().setTitle("Tambah Resep");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

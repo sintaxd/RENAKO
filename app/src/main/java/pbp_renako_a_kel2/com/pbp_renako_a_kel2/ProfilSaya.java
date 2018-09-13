@@ -9,5 +9,8 @@ public class ProfilSaya extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profil);
+
+        getSupportActionBar().setTitle("Profil Pengguna");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }

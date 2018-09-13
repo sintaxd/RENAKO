@@ -2,8 +2,8 @@
     <string name="app_name">RENAKO RESEP</string>
 
     <string-array name="spinner">
-        <item>Makanan</item>
-        <item>Minuman</item>
-        <item>Snack</item>
+        <item>Makanan Ringan</item>
+        <item>Makanan Utama</item>
+        <item>Makanan Penutup</item>
     </string-array>
 </resources>
