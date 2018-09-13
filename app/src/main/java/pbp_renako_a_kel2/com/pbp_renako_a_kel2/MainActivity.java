@@ -10,7 +10,7 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-    //GEO GANTENG MAKSIMAL
+
 
 
     private EditText email,pass;
