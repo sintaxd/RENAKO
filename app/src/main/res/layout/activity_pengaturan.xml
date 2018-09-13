@@ -16,7 +16,6 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:drawableLeft="@drawable/ic_lock"
-        android:onClick="txtUbahKataSandi_Pengaturan"
         android:text="Ubah Kata Sandi"
         android:textAlignment="viewStart"
         android:textSize="18sp"

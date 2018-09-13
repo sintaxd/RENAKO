@@ -24,14 +24,14 @@
         app:layout_constraintVertical_bias="0.04" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/ic_person"
         android:layout_width="122dp"
         android:layout_height="107dp"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/person"
+        android:src="@drawable/ic_person"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
