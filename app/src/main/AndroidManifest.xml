@@ -9,22 +9,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity" android:theme="@style/AppFullScreenTheme">
-
-
-
-        </activity>
-        <activity android:name=".RegisterActivity"/>
-        <activity android:name=".PengaturanActivity" >
-
-        </activity>
-        <activity android:name=".EditKataSandiActivity" android:parentActivityName=".PengaturanActivity">
-
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppFullScreenTheme"></activity>
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".PengaturanActivity"></activity>
+        <activity
+            android:name=".EditKataSandiActivity"
+            android:parentActivityName=".PengaturanActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ProfilSaya"></activity>
     </application>
 
 </manifest>
