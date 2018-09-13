@@ -20,8 +20,9 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    ////repo fire base
-    implementation 'com.google.firebase:firebase-core:16.0.1'
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'//retrofit rest client
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'//retrofit Json Converter
+
     implementation 'com.android.support:appcompat-v7:28.0.0-rc02'
     implementation 'com.android.support.constraint:constraint-layout:1.1.3'
     implementation 'com.android.support:support-v4:28.0.0-rc02'
@@ -31,4 +32,3 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:15.0.1'
 }
 
-apply plugin: 'com.google.gms.google-services'
