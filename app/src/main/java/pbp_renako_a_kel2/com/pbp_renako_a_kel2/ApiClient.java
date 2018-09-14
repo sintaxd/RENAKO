@@ -7,13 +7,12 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiClient {
-    @GET("View.php")
-    Call<Value> getStudents();
+    @GET("")
+    Call<Value> getUser();
 
-    @POST("Insert.php")
+    @POST("Register.php")
     @FormUrlEncoded
-    Call<String> regStudent (@Field("nama") String npm,
-                             @Field ("email") String email,
-                             @Field ("password") String password,
-                             @Field ("ulangpassword") String ulangpassword);
+    Call<String> regUser  (@Field("nama") String npm,
+                           @Field ("email") String email,
+                           @Field ("password") String password);
 }
