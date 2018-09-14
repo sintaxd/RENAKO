@@ -12,23 +12,21 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppFullScreenTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
-
         <activity
             android:name=".RegisterActivity"
-            android:theme="@style/AppFullScreenTheme"/>
-
-        <activity android:name=".PengaturanActivity"></activity>
-
-        <activity android:name=".EditKataSandiActivity" android:parentActivityName=".MainActivity" />
-        <activity android:name=".ProfilSaya"></activity>
+            android:theme="@style/AppFullScreenTheme" />
+        <activity android:name=".PengaturanActivity" />
+        <activity
+            android:name=".EditKataSandiActivity"
+            android:parentActivityName=".MainActivity" />
+        <activity android:name=".ProfilSaya" />
+        <activity android:name=".TampilResep"></activity>
     </application>
 
 </manifest>
