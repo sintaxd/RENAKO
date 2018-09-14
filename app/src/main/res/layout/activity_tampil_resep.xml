@@ -5,37 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TampilResep">
-
-    <ImageView
-        android:id="@+id/imagePizza"
-        android:layout_width="391dp"
-        android:layout_height="290dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.478"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/pizza" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="400dp"
-        android:layout_height="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="256dp"
-        android:foreground="#ffc9c9"
-        android:gravity="center"
-        android:text="Pizza Ala Anak Kost"
-        android:textColor="#FFFFFF"
-        android:textSize="200sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.007"
-        tools:text="Pizza Ala Anak Kost" />
-</android.support.constraint.ConstraintLayout>
+    <!-->
+        <ImageView
+            android:id="@+id/imagePizza"
+            android:layout_width="391dp"
+            android:layout_height="290dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:srcCompat="@drawable/pizza" />
+    <-->
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="400dp"
+            android:layout_height="50dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="256dp"
+            android:foreground="#ffc9c9"
+            android:gravity="center"
+            android:text="Pizza Ala Anak Kost"
+            android:textColor="#FFFFFF"
+            android:textSize="200sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.007"
+            tools:text="Pizza Ala Anak Kost" />
+    </android.support.constraint.ConstraintLayout>
