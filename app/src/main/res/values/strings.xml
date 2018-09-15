@@ -6,8 +6,7 @@
         <item>Makanan Utama</item>
         <item>Makanan Penutup</item>
     </string-array>
-    <string name="pref_file">com.renako.preference_file</string>
-    <string name="pref_login_status">com.renako.preference_login_status</string>
-    <string name="pref_user_name">com.renako.preference_user_name</string>
-
+    <string name="username">Username</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
 </resources>

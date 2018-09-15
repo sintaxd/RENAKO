@@ -56,7 +56,7 @@ private Button mRegisterButton;
             //Post data into API
             //Build Retroifit
             Retrofit.Builder builder=new Retrofit.
-                    Builder().baseUrl("http://10.0.2.2/PHP_RENAKO/register.php").
+                    Builder().baseUrl("http://renakomaster.000webhostapp.com").
                     addConverterFactory(GsonConverterFactory.create());
             Retrofit retrofit=builder.build();
             ApiClient apiClient=retrofit.create(ApiClient.class);
