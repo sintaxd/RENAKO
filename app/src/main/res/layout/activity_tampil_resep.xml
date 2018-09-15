@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".TampilResep">
-    <!-->
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="23dp">
+
         <ImageView
             android:id="@+id/imagePizza"
             android:layout_width="391dp"
@@ -16,26 +23,25 @@
             android:layout_marginTop="8dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.478"
+            app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0"
+            app:layout_constraintVertical_bias="0.873"
             app:srcCompat="@drawable/pizza" />
-    <-->
+
         <TextView
-            android:id="@+id/textView2"
-            android:layout_width="400dp"
-            android:layout_height="50dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginTop="256dp"
-            android:foreground="#ffc9c9"
-            android:gravity="center"
+            android:id="@+id/txt_NamaResep"
+            android:layout_width="272dp"
+            android:layout_height="38dp"
+
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true"
             android:text="Pizza Ala Anak Kost"
-            android:textColor="#FFFFFF"
-            android:textSize="200sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.007"
-            tools:text="Pizza Ala Anak Kost" />
+            android:textColor="@android:color/white"
+            android:textSize="24sp"
+            tools:layout_editor_absoluteX="16dp"
+            tools:layout_editor_absoluteY="252dp" />
+
     </android.support.constraint.ConstraintLayout>
+
+</RelativeLayout>
