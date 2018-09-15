@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pbp_renako_a_kel2.com.pbp_renako_a_kel2">
-    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +13,11 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppFullScreenTheme">
+            android:theme="@style/AppFullScreenTheme"></activity>
+        <activity
+            android:name=".RegisterActivity"
+            android:theme="@style/AppFullScreenTheme" />
+        <activity android:name=".PengaturanActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,14 +25,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".RegisterActivity"
-            android:theme="@style/AppFullScreenTheme" />
-        <activity android:name=".PengaturanActivity" />
-        <activity
             android:name=".EditKataSandiActivity"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".PengaturanActivity" />
         <activity android:name=".ProfilSaya" />
-        <activity android:name=".TampilResep"></activity>
+        <activity android:name=".TampilResep" />
+        <activity android:name=".EditDataPengguna"
+            android:parentActivityName=".PengaturanActivity"></activity>
     </application>
 
 </manifest>

@@ -51,16 +51,14 @@
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Button"
+        android:text="BATAL"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.092"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.831"
-        tools:text="Batal" />
+        app:layout_constraintVertical_bias="0.831" />
 
-    <!-- aaa-->
     <EditText
         android:id="@+id/editEmailPengguna"
         android:layout_width="318dp"

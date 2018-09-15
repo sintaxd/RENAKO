@@ -15,4 +15,18 @@
         <item name="android:windowContentOverlay">@null</item>
     </style>
 
+    <style name="ubahprofile">
+        <item name="android:layout_width">180dp</item>
+        <item name="android:layout_height">30dp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="android:drawableLeft">@drawable/ic_person</item>
+        <item name="android:drawablePadding">8dp</item>
+        <item name="android:textAlignment">viewStart</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
 </resources>
