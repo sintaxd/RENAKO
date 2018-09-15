@@ -4,13 +4,12 @@ public class UserDAO {
     String nama;
     String email;
     String password;
-    String ulangpassword;
 
-    public UserDAO(String nama, String email, String password, String ulangpassword) {
+
+    public UserDAO(String nama, String email, String password) {
         this.nama = nama;
         this.email = email;
         this.password = password;
-        this.ulangpassword = ulangpassword;
     }
 
     public String getNama() {
@@ -25,9 +24,7 @@ public class UserDAO {
         return password;
     }
 
-    public String getUlangpassword() {
-        return ulangpassword;
-    }
+
 
     public void setNama(String nama) {
         this.nama = nama;
@@ -41,7 +38,5 @@ public class UserDAO {
         this.password = password;
     }
 
-    public void setUlangpassword(String ulangpassword) {
-        this.ulangpassword = ulangpassword;
-    }
+
 }
