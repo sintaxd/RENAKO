@@ -4,44 +4,118 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/graylight"
     tools:context=".TampilResep">
 
-    <android.support.constraint.ConstraintLayout
+
+    <ImageView
+        android:id="@+id/foto_makanan"
+        android:layout_width="match_parent"
+        android:layout_height="164dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="0dp"
+        app:srcCompat="@drawable/ic_launcher_background"
+        tools:ignore="VectorDrawableCompat" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="41dp"
+        android:layout_alignBottom="@+id/foto_makanan"
+        android:layout_alignParentStart="true"
+        android:background="@color/common_google_signin_btn_text_light_default">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="16dp"
+            android:paddingBottom="10dp"
+            android:text="Nama Resep"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="23dp">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="171dp"
+        android:text="Pembuat Resep :"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
-        <ImageView
-            android:id="@+id/imagePizza"
-            android:layout_width="391dp"
-            android:layout_height="290dp"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.873"
-            app:srcCompat="@drawable/pizza" />
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="108dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="200dp"
+        android:text="Kategori :"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/txt_NamaResep"
-            android:layout_width="272dp"
-            android:layout_height="38dp"
+    <TextView
+        android:id="@+id/user_resep"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_marginStart="134dp"
+        android:text="pemilik resep" />
 
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentEnd="true"
-            android:text="Pizza Ala Anak Kost"
-            android:textColor="@android:color/white"
-            android:textSize="24sp"
-            tools:layout_editor_absoluteX="16dp"
-            tools:layout_editor_absoluteY="252dp" />
+    <TextView
+        android:id="@+id/kategori_makanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/user_resep"
+        android:layout_alignTop="@+id/textView4"
+        android:text="kategori makanan" />
 
-    </android.support.constraint.ConstraintLayout>
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginTop="232dp"
+        android:text="Bahan dan Alat"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/alat_Bahan"
+        android:layout_width="355dp"
+        android:layout_height="139dp"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/textView9"
+        android:background="@android:color/white"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_marginBottom="148dp"
+        android:text="Cara Memasak"
+        android:textColor="@android:color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/cara_memasak"
+        android:layout_width="355dp"
+        android:layout_height="137dp"
+        android:layout_alignStart="@+id/textView3"
+        android:layout_below="@+id/textView11"
+        android:layout_marginTop="-148dp"
+        android:background="@android:color/white"
+        android:text="TextView" />
 </RelativeLayout>

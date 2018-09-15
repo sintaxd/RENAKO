@@ -13,24 +13,37 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity"
-            android:theme="@style/AppFullScreenTheme"></activity>
+            android:theme="@style/AppFullScreenTheme" />
+
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppFullScreenTheme" />
-        <activity android:name=".PengaturanActivity">
+
+        <activity android:name=".PengaturanActivity"/>
+
+        <activity
+            android:name=".EditKataSandiActivity"
+            android:parentActivityName=".PengaturanActivity" />
+
+        <activity android:name=".ProfilSaya" />
+
+        <activity android:name=".TampilResep" />
+
+        <activity
+            android:name=".EditDataPengguna"
+            android:parentActivityName=".PengaturanActivity" />
+
+        <activity android:name=".main_menu"
+                        android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
-        <activity
-            android:name=".EditKataSandiActivity"
-            android:parentActivityName=".PengaturanActivity" />
-        <activity android:name=".ProfilSaya" />
-        <activity android:name=".TampilResep" />
-        <activity android:name=".EditDataPengguna"
-            android:parentActivityName=".PengaturanActivity"></activity>
+
     </application>
 
 </manifest>

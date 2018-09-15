@@ -6,6 +6,7 @@
         <item name="colorPrimary">@color/red</item>
         <item name="colorPrimaryDark">#c0392b</item>
         <item name="colorAccent">#d63031</item>
+
     </style>
 
     <style name="AppFullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -27,6 +28,12 @@
         <item name="android:textAlignment">viewStart</item>
         <item name="android:textSize">18sp</item>
         <item name="android:gravity">center</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
     </style>
 
 </resources>
