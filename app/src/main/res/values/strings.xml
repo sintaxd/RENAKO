@@ -6,6 +6,7 @@
         <item>Makanan Utama</item>
         <item>Makanan Penutup</item>
     </string-array>
+
     <string name="username">Username</string>
     <string name="email">Email</string>
     <string name="password">Password</string>

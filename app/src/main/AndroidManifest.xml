@@ -34,7 +34,10 @@
 
         <activity android:name=".ProfilSaya" />
 
-        <activity android:name=".TampilResep" />
+        <activity android:name=".TampilResep"
+            android:parentActivityName=".main_menu"/>
+        <activity android:name=".TambahResep"
+            android:parentActivityName=".main_menu"/>
 
         <activity
             android:name=".EditDataPengguna"

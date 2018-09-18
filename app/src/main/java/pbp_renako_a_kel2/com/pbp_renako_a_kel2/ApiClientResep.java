@@ -1,5 +1,7 @@
 package pbp_renako_a_kel2.com.pbp_renako_a_kel2;
 
+import com.google.gson.JsonObject;
+
 import retrofit2.Call;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
@@ -13,8 +15,8 @@ public interface ApiClientResep {
 
     @POST("insert_resep_process.php")
     @FormUrlEncoded
-    Call<String> regResep  (@Field("nama_resep_makanan") String nama_resep_makanan,
-                            @Field ("alat_bahan_makanan") String alat_bahan_makanan,
+    Call<JsonObject> regResep  (@Field("nama_resep_masakan") String nama_resep_masakan,
+                            @Field ("alat_bahan_masakan") String alat_bahan_masakan,
                             @Field ("cara_memasak") String cara_memasak,
                             @Field ("kategori_masakan") String kategori_masakan);
 }

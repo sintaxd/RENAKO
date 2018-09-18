@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/graylight">
@@ -10,16 +11,104 @@
         android:background="@color/red">
     </RelativeLayout>
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="102dp"
+        android:layout_height="156dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="61dp"
-        android:background="@drawable/border"
+        android:background="@drawable/border_mainmenu"
         android:orientation="vertical">
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/txtNama_masakan_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="nama makanannya"
+            android:textSize="20dp"
+            android:background="@drawable/border_mainmenu"
+            android:paddingLeft="10dp"/>
+
+        <ImageView
+            android:id="@+id/image_masakan_menu"
+            android:layout_width="129dp"
+            android:layout_height="128dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+        <LinearLayout
+            android:id="@+id/layoutket"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txtNama_masakan_menu"
+            android:layout_toEndOf="@+id/image_masakan_menu"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Pembuat :" />
+
+            <TextView
+                android:id="@+id/textView18"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Kategori :" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="187dp"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/txtNama_masakan_menu"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/layoutket"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/user_resep_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:text="Nama Pembuatnya" />
+
+            <TextView
+                android:id="@+id/kategori_masakan_menu"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:text="Kategorinya" />
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btnTambah_resep_menu"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/red"
+        android:text="TAMBAH RESEPMU"
+        android:textSize="18dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/txtsearch"
+        android:layout_width="353dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="20dp"
+        android:backgroundTint="#8c2f31"
+        android:textColorHint="#8c2f31"
+        android:drawableLeft="@drawable/ic_search_black_24dp"
+        android:ems="10"
+        android:hint="cari resep..."
+        android:inputType="textPersonName"
+        android:textColor="#FFFFFF" />
 
 
 </RelativeLayout>

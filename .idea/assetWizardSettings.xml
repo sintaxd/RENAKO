@@ -69,7 +69,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/action/ic_settings_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_dehaze_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -79,7 +79,8 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="outputName" value="ic_settings" />
+                            <entry key="color" value="ffffff" />
+                            <entry key="outputName" value="ic_dehaze" />
                             <entry key="sourceFile" value="E:\Downloads\baseline-fastfood-24px.svg" />
                           </map>
                         </option>

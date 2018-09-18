@@ -14,12 +14,15 @@ import android.view.MenuItem;
 public class main_menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
         Toolbar toolbar=findViewById(R.id.toolbar);
+//        getSupportActionBar().setDisplayShowHomeEnabled(true);
+//        getSupportActionBar().setIcon(R.drawable.ic_dehaze);
         setSupportActionBar(toolbar);
         drawer=findViewById(R.id.drawer_layout);
 

@@ -9,5 +9,8 @@ public class TampilResep extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tampil_resep);
+
+        getSupportActionBar().setTitle("Tampil Resep");
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 }
