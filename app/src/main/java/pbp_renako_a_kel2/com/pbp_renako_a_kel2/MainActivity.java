@@ -10,12 +10,9 @@ import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
-
-
-
-    private EditText email,pass;
-    private Button login;
-    private TextView reg;
+    EditText email,pass;
+    Button login;
+    TextView reg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
