@@ -21,6 +21,7 @@ private EditText mNama;
 private EditText mEmail;
 private EditText mPassword;
 private Button mRegisterButton;
+private Button mCancelButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,7 +34,13 @@ private Button mRegisterButton;
                 onClickRegister();
             }
         });
-
+        mCancelButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i=new Intent(RegisterActivity.this,MainActivity.class);
+                startActivity(i);
+            }
+        });
 
 
     }
@@ -42,7 +49,9 @@ private Button mRegisterButton;
         mEmail=findViewById(R.id.txtEmail_Register);
         mPassword=findViewById(R.id.txtPassword_Register2);
         mRegisterButton=findViewById(R.id.btnSimpan_Register);
+        mCancelButton=findViewById(R.id.btnBatal_Register);
     }
+
     private void startIntent(){
         Intent intent=new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);

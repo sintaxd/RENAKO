@@ -7,6 +7,7 @@
         <item name="colorPrimaryDark">#c0392b</item>
         <item name="colorAccent">#d63031</item>
 
+
     </style>
 
     <style name="AppFullScreenTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -33,7 +34,6 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="toolbarStyle">@style/Widget.AppCompat.Toolbar</item>
     </style>
 
 </resources>
