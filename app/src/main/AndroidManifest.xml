@@ -42,8 +42,7 @@
 
         <activity
             android:name=".main_menu"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:label="Menu Utama">
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
     </application>

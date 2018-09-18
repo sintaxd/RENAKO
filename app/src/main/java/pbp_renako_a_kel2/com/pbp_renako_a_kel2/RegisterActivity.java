@@ -9,6 +9,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.JsonObject;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -70,18 +72,18 @@ private Button mCancelButton;
             Retrofit retrofit=builder.build();
             ApiClient apiClient=retrofit.create(ApiClient.class);
             //Call api yang dibuat di php
-            Call<String> userDAOCall=apiClient.regUser(mNama.getText().toString(),
+            Call<JsonObject> userDAOCall=apiClient.regUser(mNama.getText().toString(),
                     mEmail.getText().toString(),mPassword.getText().toString());
 
-            userDAOCall.enqueue(new Callback<String>() {
+            userDAOCall.enqueue(new Callback<JsonObject>() {
                 @Override
-                public void onResponse(Call<String> call, Response<String> response) {
+                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                     Toast.makeText(RegisterActivity.this,"Success",Toast.LENGTH_SHORT).show();
                     startIntent();
                 }
 
                 @Override
-                public void onFailure(Call<String> call, Throwable t) {
+                public void onFailure(Call<JsonObject> call, Throwable t) {
                     Toast.makeText(RegisterActivity.this,"Network connection failed",Toast.LENGTH_SHORT).show();
                 }
             });
