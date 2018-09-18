@@ -10,9 +10,9 @@ public interface ApiClient {
     @GET("")
     Call<Value> getUser();
 
-    @POST("register.php")
+    @POST("user_process.php")
     @FormUrlEncoded
-    Call<String> regUser  (@Field("user_nama") String user_nama,
+    Call<String> regUser  (@Field("user_name") String user_name,
                            @Field ("user_email") String user_email,
                            @Field ("user_password") String user_password);
 }
