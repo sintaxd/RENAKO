@@ -83,7 +83,7 @@
         app:layout_constraintVertical_bias="0.705" />
 
     <TextView
-        android:id="@+id/AlatBahan3"
+        android:id="@+id/AlatBahan"
         android:layout_width="142dp"
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
@@ -101,7 +101,7 @@
         app:layout_constraintVertical_bias="0.463" />
 
     <TextView
-        android:id="@+id/txtShowKategori2"
+        android:id="@+id/txtShowKategori"
         android:layout_width="142dp"
         android:layout_height="35dp"
         android:layout_marginBottom="8dp"
@@ -183,7 +183,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btnSave2"
+        android:id="@+id/btnSave"
         android:layout_width="102dp"
         android:layout_height="54dp"
         android:layout_marginBottom="8dp"

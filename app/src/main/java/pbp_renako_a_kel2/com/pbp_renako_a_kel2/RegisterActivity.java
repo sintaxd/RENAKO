@@ -23,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
 private EditText mNama;
 private EditText mEmail;
 private EditText mPassword;
+private EditText mConfirmPassword;
 private Button mRegisterButton;
 private Button mCancelButton;
     @Override
@@ -51,6 +52,7 @@ private Button mCancelButton;
         mNama= findViewById(R.id.txtNama_Register);
         mEmail=findViewById(R.id.txtEmail_Register);
         mPassword=findViewById(R.id.txtPassword_Register2);
+        mConfirmPassword=findViewById(R.id.txtConfirmPassword_Register);
         mRegisterButton=findViewById(R.id.btnSimpan_Register);
         mCancelButton=findViewById(R.id.btnBatal_Register);
     }
@@ -62,9 +64,14 @@ private Button mCancelButton;
     private void onClickRegister(){
         if(mNama.getText().toString().isEmpty() ||
                 mEmail.getText().toString().isEmpty()||
-                mPassword.getText().toString().isEmpty()){
-            Toast.makeText(this, "Field can't be empty", Toast.LENGTH_SHORT).show();
-        }else{
+                mPassword.getText().toString().isEmpty() ||  mConfirmPassword.getText().toString().isEmpty()){
+            Toast.makeText(this, "Kolom tidak boleh kosong !", Toast.LENGTH_SHORT).show();
+        }else if(mPassword.getText().toString() != mConfirmPassword.getText().toString())
+        {
+            Toast.makeText(this, "Password tidak sesuai ", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
             //Post data into API
             //Build Retroifit
 
