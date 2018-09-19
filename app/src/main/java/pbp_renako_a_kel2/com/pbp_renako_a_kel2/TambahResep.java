@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -72,9 +74,12 @@ public class TambahResep extends AppCompatActivity {
         }else{
             //Post data into API
             //Build Retroifit
+            Gson gson = new GsonBuilder()
+                    .setLenient()
+                    .create();
             Retrofit.Builder builder=new Retrofit.
                     Builder().baseUrl("http://renakomaster.000webhostapp.com").
-                    addConverterFactory(GsonConverterFactory.create());
+                    addConverterFactory(GsonConverterFactory.create(gson));
             Retrofit retrofit=builder.build();
             ApiClientResep apiClientResep=retrofit.create(ApiClientResep.class);
 
@@ -85,7 +90,7 @@ public class TambahResep extends AppCompatActivity {
             ResepDAOCall.enqueue(new Callback<JsonObject>() {
                 @Override
                 public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                    Toast.makeText(TambahResep.this,"Success",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(TambahResep.this,"Tambah Resep Success",Toast.LENGTH_SHORT).show();
                     startIntent();
                 }
 

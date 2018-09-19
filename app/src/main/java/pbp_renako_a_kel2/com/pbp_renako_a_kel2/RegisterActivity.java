@@ -1,7 +1,6 @@
 package pbp_renako_a_kel2.com.pbp_renako_a_kel2;
 
 import android.content.Intent;
-import android.net.wifi.hotspot2.pps.HomeSp;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -9,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -66,9 +67,14 @@ private Button mCancelButton;
         }else{
             //Post data into API
             //Build Retroifit
+
+            Gson gson = new GsonBuilder()
+                    .setLenient()
+                    .create();
+
             Retrofit.Builder builder=new Retrofit.
                     Builder().baseUrl("http://renakomaster.000webhostapp.com").
-                    addConverterFactory(GsonConverterFactory.create());
+                    addConverterFactory(GsonConverterFactory.create(gson));
             Retrofit retrofit=builder.build();
             ApiClient apiClient=retrofit.create(ApiClient.class);
             //Call api yang dibuat di php
@@ -77,8 +83,9 @@ private Button mCancelButton;
 
             userDAOCall.enqueue(new Callback<JsonObject>() {
                 @Override
+
                 public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                    Toast.makeText(RegisterActivity.this,"Success",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"Register Success",Toast.LENGTH_SHORT).show();
                     startIntent();
                 }
 

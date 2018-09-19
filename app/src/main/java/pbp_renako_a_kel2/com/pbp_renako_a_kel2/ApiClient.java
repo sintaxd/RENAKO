@@ -12,9 +12,15 @@ public interface ApiClient {
     @GET("")
     Call<Value> getUser();
 
+
     @POST("user_process.php")
     @FormUrlEncoded
     Call<JsonObject>regUser(@Field("user_name") String user_name,
                             @Field ("user_email") String user_email,
+                            @Field ("user_password") String user_password);
+
+    @POST("/login.php")
+    @FormUrlEncoded
+    Call<Login_response>logUser(@Field ("user_email") String user_email,
                             @Field ("user_password") String user_password);
 }
