@@ -63,45 +63,42 @@ private Button mCancelButton;
     }
     private void onClickRegister(){
         if(mNama.getText().toString().isEmpty() ||
-                mEmail.getText().toString().isEmpty()||
-                mPassword.getText().toString().isEmpty() ||  mConfirmPassword.getText().toString().isEmpty()){
-            Toast.makeText(this, "Kolom tidak boleh kosong !", Toast.LENGTH_SHORT).show();
-        }
-        else if(mPassword.getText().toString().equalsIgnoreCase(mConfirmPassword.getText().toString()))
+            mEmail.getText().toString().isEmpty()||
+            mPassword.getText().toString().isEmpty() ||
+            mConfirmPassword.getText().toString().isEmpty())
         {
-            Toast.makeText(this, "Password tidak sesuai ", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Kolom tidak boleh kosong !", Toast.LENGTH_SHORT).show();
         }
         else
         {
-            //Post data into API
-            //Build Retroifit
+                //Post data into API
+                //Build Retroifit
+                Gson gson = new GsonBuilder()
+                        .setLenient()
+                        .create();
 
-            Gson gson = new GsonBuilder()
-                    .setLenient()
-                    .create();
+                Retrofit.Builder builder=new Retrofit.
+                        Builder().baseUrl("http://renakomaster.000webhostapp.com").
+                        addConverterFactory(GsonConverterFactory.create(gson));
+                Retrofit retrofit=builder.build();
+                ApiClient apiClient=retrofit.create(ApiClient.class);
+                //Call api yang dibuat di php
+                Call<JsonObject> userDAOCall=apiClient.regUser(mNama.getText().toString(),
+                        mEmail.getText().toString(),mPassword.getText().toString());
 
-            Retrofit.Builder builder=new Retrofit.
-                    Builder().baseUrl("http://renakomaster.000webhostapp.com").
-                    addConverterFactory(GsonConverterFactory.create(gson));
-            Retrofit retrofit=builder.build();
-            ApiClient apiClient=retrofit.create(ApiClient.class);
-            //Call api yang dibuat di php
-            Call<JsonObject> userDAOCall=apiClient.regUser(mNama.getText().toString(),
-                    mEmail.getText().toString(),mPassword.getText().toString());
+                userDAOCall.enqueue(new Callback<JsonObject>() {
+                    @Override
 
-            userDAOCall.enqueue(new Callback<JsonObject>() {
-                @Override
+                    public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                        Toast.makeText(RegisterActivity.this,"Register Success",Toast.LENGTH_SHORT).show();
+                        startIntent();
+                    }
 
-                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                    Toast.makeText(RegisterActivity.this,"Register Success",Toast.LENGTH_SHORT).show();
-                    startIntent();
-                }
-
-                @Override
-                public void onFailure(Call<JsonObject> call, Throwable t) {
-                    Toast.makeText(RegisterActivity.this,"Network connection failed",Toast.LENGTH_SHORT).show();
-                }
-            });
+                    @Override
+                    public void onFailure(Call<JsonObject> call, Throwable t) {
+                        Toast.makeText(RegisterActivity.this,"Network connection failed",Toast.LENGTH_SHORT).show();
+                    }
+                });
         }
     }
 }
