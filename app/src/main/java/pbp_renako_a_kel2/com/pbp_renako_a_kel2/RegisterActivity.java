@@ -66,7 +66,8 @@ private Button mCancelButton;
                 mEmail.getText().toString().isEmpty()||
                 mPassword.getText().toString().isEmpty() ||  mConfirmPassword.getText().toString().isEmpty()){
             Toast.makeText(this, "Kolom tidak boleh kosong !", Toast.LENGTH_SHORT).show();
-        }else if(mPassword.getText().toString() != mConfirmPassword.getText().toString())
+        }
+        else if(mPassword.getText().toString().equalsIgnoreCase(mConfirmPassword.getText().toString()))
         {
             Toast.makeText(this, "Password tidak sesuai ", Toast.LENGTH_SHORT).show();
         }
