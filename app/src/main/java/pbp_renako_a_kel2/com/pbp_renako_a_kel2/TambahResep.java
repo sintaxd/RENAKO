@@ -63,7 +63,7 @@ public class TambahResep extends AppCompatActivity {
         spinner=(Spinner) findViewById(R.id.spinner);
         kategori=spinner.getSelectedItem().toString();
         cancel=findViewById(R.id.btnCancel);
-        save=findViewById(R.id.btnSave2);
+        save=findViewById(R.id.btnSave);
     }
 
     private void onClickSave(){
