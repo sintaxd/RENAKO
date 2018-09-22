@@ -22,7 +22,7 @@ public class SessionManager {
     private static final String IS_LOGIN = "IsLoggedIn";
 
     // User name (make variable public to access from outside)
-    public static final String KEY_NAME = "name";
+    public static final String KEY_PASS ="pass";
 
     // Email address (make variable public to access from outside)
     public static final String KEY_EMAIL = "email";
@@ -34,15 +34,15 @@ public class SessionManager {
         editor = pref.edit();
     }
 
-    public void createLoginSession(String name, String email){
+    public void createLoginSession(String email, String pass){
         // Storing login value as TRUE
         editor.putBoolean(IS_LOGIN, true);
 
-        // Storing name in pref
-        editor.putString(KEY_NAME, name);
-
-        // Storing email in pref
+        // String email in pref
         editor.putString(KEY_EMAIL, email);
+
+        // String pass in pref
+        editor.putString(KEY_PASS, pass);
 
         // commit changes
         editor.commit();
@@ -50,10 +50,10 @@ public class SessionManager {
     public HashMap<String, String> getUserDetails(){
         HashMap<String, String> user = new HashMap<String, String>();
         // user name
-        user.put(KEY_NAME, pref.getString(KEY_NAME, null));
+        user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
 
         // user email id
-        user.put(KEY_EMAIL, pref.getString(KEY_EMAIL, null));
+        user.put(KEY_PASS, pref.getString(KEY_PASS, null));
 
         // return user
         return user;

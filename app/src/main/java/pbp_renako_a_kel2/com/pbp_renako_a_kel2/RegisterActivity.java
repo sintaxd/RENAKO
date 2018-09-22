@@ -26,10 +26,15 @@ private EditText mPassword;
 private EditText mConfirmPassword;
 private Button mRegisterButton;
 private Button mCancelButton;
+SessionManager session;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        // Session class instance
+        session = new SessionManager(getApplicationContext());
 
         setAtribut();
         mRegisterButton.setOnClickListener(new View.OnClickListener() {

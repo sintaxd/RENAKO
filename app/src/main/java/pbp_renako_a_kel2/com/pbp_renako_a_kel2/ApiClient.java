@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.POST;
 
 public interface ApiClient {
-    @GET("")
+    @GET("show_user_process.php")
     Call<Value> getUser();
 
 
@@ -22,5 +22,12 @@ public interface ApiClient {
     @POST("/login.php")
     @FormUrlEncoded
     Call<Login_response>logUser(@Field ("user_email") String user_email,
+                            @Field ("user_password") String user_password);
+
+    @POST("edit_user_process.php")
+    @FormUrlEncoded
+    Call<JsonObject>editUser(@Field("user_name") String user_name,
+                            @Field ("user_email") String user_email,
+                            @Field("tempEmail") String tempEmail,
                             @Field ("user_password") String user_password);
 }

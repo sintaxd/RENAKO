@@ -25,12 +25,15 @@ public class MainActivity extends AppCompatActivity {
     EditText email,pass;
     Button login;
     TextView reg;
-
+    SessionManager session;
+    String tempEmail, tempPass;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Session Manager
+        session = new SessionManager(getApplicationContext());
 
         email=(EditText) findViewById(R.id.txtEmail_Login);
         pass=(EditText) findViewById(R.id.txtKataSandi_Login);
@@ -71,16 +74,18 @@ public class MainActivity extends AppCompatActivity {
             ApiClient apiClient=retrofit.create(ApiClient.class);
 
             //Call api yang dibuat di php
-            Call<Login_response> userDAOCall=apiClient.logUser(email.getText().toString(),pass.getText().toString());
-
+            tempEmail=email.getText().toString();
+            tempPass=pass.getText().toString();
+            Call<Login_response> userDAOCall=apiClient.logUser(tempEmail,tempPass);
+            session.createLoginSession(tempEmail,tempPass);
             userDAOCall.enqueue(new Callback<Login_response>() {
-                @Override
 
+                @Override
                 public void onResponse(Call<Login_response> call, Response<Login_response> response) {
                     if(response.body().getResponse().equals("OK"))
                     {
                         Toast.makeText(MainActivity.this,"Berhasil",Toast.LENGTH_SHORT).show();
-                        Intent i=new Intent(MainActivity.this,main_menu.class);
+                        Intent i=new Intent(getApplicationContext(),main_menu.class);
                         startActivity(i);
                         finish();
                     }else
