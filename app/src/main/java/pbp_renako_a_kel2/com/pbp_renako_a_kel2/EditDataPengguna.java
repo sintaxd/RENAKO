@@ -40,7 +40,7 @@ public class EditDataPengguna extends AppCompatActivity {
         eSimpan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onClickRegister();
+                onClickUpdate();
             }
         });
         eBatal.setOnClickListener(new View.OnClickListener() {
@@ -58,11 +58,11 @@ public class EditDataPengguna extends AppCompatActivity {
         eSimpan=findViewById(R.id.btnSimpan_EDP);
         eBatal=findViewById(R.id.btnBatal_EDP);
         tempEmail=session.pref.getString("email", "");
-        tempPassword=session.pref.getString("pass", "");
+
 
     }
 
-    private void onClickRegister(){
+    private void onClickUpdate(){
         if(eNama.getText().toString().isEmpty() || eEmail.getText().toString().isEmpty())
         {
             Toast.makeText(this, "Kolom tidak boleh kosong !", Toast.LENGTH_SHORT).show();
@@ -82,7 +82,7 @@ public class EditDataPengguna extends AppCompatActivity {
             ApiClient apiClient=retrofit.create(ApiClient.class);
             //Call api yang dibuat di php
             Call<JsonObject> userDAOCall=apiClient.editUser(eNama.getText().toString(),
-                    eEmail.getText().toString(),tempEmail,tempPassword);
+                    eEmail.getText().toString(),tempEmail);
 
             userDAOCall.enqueue(new Callback<JsonObject>() {
                 @Override
@@ -100,7 +100,7 @@ public class EditDataPengguna extends AppCompatActivity {
         }
     }
     private void startIntent(){
-        Intent intent=new Intent(getApplicationContext(),MainActivity.class);
+        Intent intent=new Intent(getApplicationContext(),PengaturanActivity.class);
         startActivity(intent);
     }
 }

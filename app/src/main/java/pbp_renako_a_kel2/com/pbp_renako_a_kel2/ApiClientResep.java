@@ -10,13 +10,15 @@ import retrofit2.http.POST;
 
 public interface ApiClientResep {
 
-    @GET("")
-    Call<Value> getResep();
+    @GET("show_resep_process.php")
+    Call<JsonObject> getResep();
 
     @POST("insert_resep_process.php")
     @FormUrlEncoded
     Call<JsonObject> regResep  (@Field("nama_resep_masakan") String nama_resep_masakan,
-                            @Field ("alat_bahan_masakan") String alat_bahan_masakan,
-                            @Field ("cara_memasak") String cara_memasak,
-                            @Field ("kategori_masakan") String kategori_masakan);
+                                @Field ("alat_bahan_masakan") String alat_bahan_masakan,
+                                @Field ("cara_memasak") String cara_memasak,
+                                @Field ("kategori_masakan") String kategori_masakan
+                               );
+
 }

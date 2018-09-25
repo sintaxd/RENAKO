@@ -10,7 +10,7 @@ import retrofit2.http.POST;
 
 public interface ApiClient {
     @GET("show_user_process.php")
-    Call<Value> getUser();
+    Call<JsonObject> getUser();
 
 
     @POST("user_process.php")
@@ -28,6 +28,5 @@ public interface ApiClient {
     @FormUrlEncoded
     Call<JsonObject>editUser(@Field("user_name") String user_name,
                             @Field ("user_email") String user_email,
-                            @Field("tempEmail") String tempEmail,
-                            @Field ("user_password") String user_password);
+                            @Field("tempEmail") String tempEmail);
 }

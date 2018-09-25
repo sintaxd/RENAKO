@@ -68,7 +68,7 @@
         android:layout_alignParentStart="true"
         android:layout_alignTop="@+id/textView3"
         android:layout_marginStart="134dp"
-        android:text="pemilik resep" />
+        />
 
     <TextView
         android:id="@+id/kategori_makanan"
@@ -76,7 +76,7 @@
         android:layout_height="wrap_content"
         android:layout_alignStart="@+id/user_resep"
         android:layout_alignTop="@+id/textView4"
-        android:text="kategori makanan" />
+         />
 
     <TextView
         android:id="@+id/textView9"
@@ -95,8 +95,7 @@
         android:layout_height="139dp"
         android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/textView9"
-        android:background="@android:color/white"
-        android:text="TextView" />
+        android:background="@android:color/white" />
 
     <TextView
         android:id="@+id/textView11"
@@ -116,6 +115,5 @@
         android:layout_alignStart="@+id/textView3"
         android:layout_below="@+id/textView11"
         android:layout_marginTop="-148dp"
-        android:background="@android:color/white"
-        android:text="TextView" />
+        android:background="@android:color/white" />
 </RelativeLayout>
