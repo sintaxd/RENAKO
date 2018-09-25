@@ -20,12 +20,12 @@ import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TambahResep extends AppCompatActivity {
-
+    SessionManager session;
     private EditText alatbahan,caramasak,namaMasakan;
     private String kategori;
     private Spinner spinner;
     private Button cancel,save;
-
+    private String tempEmail;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +33,8 @@ public class TambahResep extends AppCompatActivity {
 
         getSupportActionBar().setTitle("Tambah Resep");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        session = new SessionManager(getApplicationContext());
 
         setAtribut();
         save.setOnClickListener(new View.OnClickListener() {
@@ -64,6 +66,7 @@ public class TambahResep extends AppCompatActivity {
         kategori=spinner.getSelectedItem().toString();
         cancel=findViewById(R.id.btnCancel);
         save=findViewById(R.id.btnSave);
+        tempEmail=session.pref.getString("email", "");
     }
 
     private void onClickSave(){
@@ -85,7 +88,7 @@ public class TambahResep extends AppCompatActivity {
 
             //Call api yang dibuat di php
             Call<JsonObject> ResepDAOCall=apiClientResep.regResep(namaMasakan.getText().toString(),
-                    alatbahan.getText().toString(),caramasak.getText().toString(),kategori);
+                    alatbahan.getText().toString(),caramasak.getText().toString(),kategori,tempEmail);
 
             ResepDAOCall.enqueue(new Callback<JsonObject>() {
                 @Override
