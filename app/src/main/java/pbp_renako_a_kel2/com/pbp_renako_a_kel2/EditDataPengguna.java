@@ -24,7 +24,6 @@ public class EditDataPengguna extends AppCompatActivity {
     private EditText eNama;
     private EditText eEmail;
     private String tempEmail;
-    private String tempPassword;
     private Button eSimpan;
     private Button eBatal;
     @Override

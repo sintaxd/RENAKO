@@ -13,6 +13,7 @@ import android.view.MenuItem;
 
 public class main_menu extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
     private DrawerLayout drawer;
+    //SessionManager session;
 
 
     @Override

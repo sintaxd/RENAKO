@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.831" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/ksConf"
         android:layout_width="321dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
@@ -60,7 +60,7 @@
         app:layout_constraintVertical_bias="0.33" />
 
     <EditText
-        android:id="@+id/editText6"
+        android:id="@+id/ksBaru"
         android:layout_width="315dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"

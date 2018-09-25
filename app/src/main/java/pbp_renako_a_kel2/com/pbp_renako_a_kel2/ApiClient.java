@@ -19,7 +19,7 @@ public interface ApiClient {
                             @Field ("user_email") String user_email,
                             @Field ("user_password") String user_password);
 
-    @POST("/login.php")
+    @POST("login.php")
     @FormUrlEncoded
     Call<Login_response>logUser(@Field ("user_email") String user_email,
                             @Field ("user_password") String user_password);
@@ -29,4 +29,10 @@ public interface ApiClient {
     Call<JsonObject>editUser(@Field("user_name") String user_name,
                             @Field ("user_email") String user_email,
                             @Field("tempEmail") String tempEmail);
+
+    @POST("edit_password_process.php")
+    @FormUrlEncoded
+    Call<JsonObject>editPass(@Field("ksLama") String ksLama,
+                             @Field ("ksBaru") String ksBaru,
+                             @Field("tempEmail") String tempEmail);
 }
