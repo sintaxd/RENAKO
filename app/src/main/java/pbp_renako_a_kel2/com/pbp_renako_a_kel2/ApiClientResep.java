@@ -18,7 +18,7 @@ public interface ApiClientResep {
     Call<JsonObject> regResep  (@Field("nama_resep_masakan") String nama_resep_masakan,
                                 @Field ("alat_bahan_masakan") String alat_bahan_masakan,
                                 @Field ("cara_memasak") String cara_memasak,
-                                @Field ("kategori_masakan") String kategori_masakan
-                               );
+                                @Field ("kategori_masakan") String kategori_masakan,
+                                @Field ("temp_email") String temp_email);
 
 }
