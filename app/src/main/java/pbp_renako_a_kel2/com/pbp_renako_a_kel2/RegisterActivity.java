@@ -74,7 +74,7 @@ SessionManager session;
         {
             Toast.makeText(this, "Kolom tidak boleh kosong !", Toast.LENGTH_SHORT).show();
         }
-        else
+        else if (mPassword.getText().toString().equalsIgnoreCase(mConfirmPassword.getText().toString()))
         {
                 //Post data into API
                 //Build Retroifit
@@ -83,7 +83,7 @@ SessionManager session;
                         .create();
 
                 Retrofit.Builder builder=new Retrofit.
-                        Builder().baseUrl("http://renakomaster.000webhostapp.com/RENAKO/").
+                        Builder().baseUrl("http://renakomaster.000webhostapp.com").
                         addConverterFactory(GsonConverterFactory.create(gson));
                 Retrofit retrofit=builder.build();
                 ApiClient apiClient=retrofit.create(ApiClient.class);
@@ -93,17 +93,19 @@ SessionManager session;
 
                 userDAOCall.enqueue(new Callback<JsonObject>() {
                     @Override
-
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
                         Toast.makeText(RegisterActivity.this,"Register Success",Toast.LENGTH_SHORT).show();
                         startIntent();
                     }
-
                     @Override
                     public void onFailure(Call<JsonObject> call, Throwable t) {
                         Toast.makeText(RegisterActivity.this,"Network connection failed",Toast.LENGTH_SHORT).show();
                     }
                 });
+        }
+        else
+        {
+            Toast.makeText(RegisterActivity.this,"Password tidak sesuai",Toast.LENGTH_SHORT).show();
         }
     }
 }
