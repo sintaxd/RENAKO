@@ -72,7 +72,8 @@ public class TambahResep extends AppCompatActivity {
     private void onClickSave(){
         if(namaMasakan.getText().toString().isEmpty() ||
                 alatbahan.getText().toString().isEmpty()||
-                caramasak.getText().toString().isEmpty()){
+                caramasak.getText().toString().isEmpty())
+        {
             Toast.makeText(this, "Field can't be empty", Toast.LENGTH_SHORT).show();
         }else{
             //Post data into API
