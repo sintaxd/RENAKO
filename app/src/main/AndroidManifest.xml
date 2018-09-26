@@ -20,34 +20,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".RegisterActivity"
             android:theme="@style/AppFullScreenTheme" />
-
-        <activity android:name=".PengaturanActivity"
-            android:parentActivityName=".main_menu"/>
-
+        <activity
+            android:name=".PengaturanActivity"
+            android:parentActivityName=".main_menu" />
         <activity
             android:name=".EditKataSandiActivity"
             android:parentActivityName=".PengaturanActivity" />
-
         <activity android:name=".ProfilSaya" />
-
-        <activity android:name=".TampilResep"
-            android:parentActivityName=".main_menu"/>
-        <activity android:name=".TambahResep"
-            android:parentActivityName=".main_menu"/>
-
+        <activity
+            android:name=".TampilResep"
+            android:parentActivityName=".main_menu" />
+        <activity
+            android:name=".TambahResep"
+            android:parentActivityName=".main_menu" />
         <activity
             android:name=".EditDataPengguna"
             android:parentActivityName=".PengaturanActivity" />
-
         <activity
             android:name=".main_menu"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
-
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".RecycleAdapter"></activity>
     </application>
 
 </manifest>

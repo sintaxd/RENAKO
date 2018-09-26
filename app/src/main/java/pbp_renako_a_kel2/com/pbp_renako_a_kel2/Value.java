@@ -4,9 +4,15 @@ import java.util.List;
 
 public class Value {
     List<UserDAO> result;
+    List<ResepDAO> resultR;
 
 
     public List<UserDAO> getResult(){
         return result;
     }
+    public List<ResepDAO> geResult(){
+        return resultR;
+    }
 }
+
+
