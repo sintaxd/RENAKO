@@ -24,7 +24,7 @@ public class EditKataSandiActivity extends AppCompatActivity {
 
     SessionManager session;
     private EditText ksLama,ksBaru,ksConf;
-    private String tempEmail;
+    private String tempPass;
     private Button mbtnSimpan_EKS, mBtnBatal_EKS;
 
 
@@ -58,7 +58,7 @@ public class EditKataSandiActivity extends AppCompatActivity {
         ksLama = findViewById(R.id.editPasswordLama);
         ksBaru=findViewById(R.id.ksBaru);
         ksConf=findViewById(R.id.ksConf);
-        tempEmail=session.pref.getString("email", "");
+        tempPass=session.pref.getString("pass", "");
         mbtnSimpan_EKS = findViewById(R.id.btnSimpan_EKS);
         mBtnBatal_EKS = findViewById(R.id.btnBatal_EKS);
     }
@@ -88,7 +88,7 @@ public class EditKataSandiActivity extends AppCompatActivity {
             ApiClient apiClient=retrofit.create(ApiClient.class);
             //Call api yang dibuat di php
             Call<JsonObject> userDAOCall=apiClient.editPass(ksLama.getText().toString(),
-                    ksBaru.getText().toString(),tempEmail);
+                    ksBaru.getText().toString(),tempPass);
 
             userDAOCall.enqueue(new Callback<JsonObject>() {
                 @Override

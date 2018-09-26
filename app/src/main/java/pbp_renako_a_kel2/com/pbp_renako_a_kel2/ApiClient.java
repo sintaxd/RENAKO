@@ -34,5 +34,5 @@ public interface ApiClient {
     @FormUrlEncoded
     Call<JsonObject>editPass(@Field("ksLama") String ksLama,
                              @Field ("ksBaru") String ksBaru,
-                             @Field("tempEmail") String tempEmail);
+                             @Field("tempPass") String tempPass);
 }
