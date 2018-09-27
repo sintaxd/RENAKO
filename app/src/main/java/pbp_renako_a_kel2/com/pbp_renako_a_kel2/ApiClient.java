@@ -32,7 +32,6 @@ public interface ApiClient {
 
     @POST("edit_password_process.php")
     @FormUrlEncoded
-    Call<JsonObject>editPass(@Field("ksLama") String ksLama,
-                             @Field ("ksBaru") String ksBaru,
-                             @Field("tempPass") String tempPass);
+    Call<JsonObject>editPass(@Field ("ksBaru") String ksBaru,
+                             @Field("tempEmail") String tempEmail);
 }
