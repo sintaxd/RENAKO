@@ -10,7 +10,7 @@ import retrofit2.http.POST;
 
 public interface ApiClient {
     @GET("show_user_process.php")
-    Call<JsonObject> getUser();
+    Call<JsonObject> getUser(@Field("user_name") String user_name);
 
 
     @POST("user_process.php")
