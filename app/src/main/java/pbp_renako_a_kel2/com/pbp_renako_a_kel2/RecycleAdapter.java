@@ -7,16 +7,24 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.JsonObject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
     private Context context;
     private List<ResepDAO> result2;
+
+    public RecycleAdapter(Context context,List<ResepDAO> result2){
+        this.context=context;
+        this.result2=result2;
+    }
+
 
     @NonNull
     @Override
@@ -25,10 +33,11 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder myViewHolder, int i) {
-        ResepDAO resepDAO=result2.get(i);
-        myViewHolder.mNamaResep.setText(resepDAO.getNama_resep_makanan());
-        myViewHolder.mKategori.setText(resepDAO.getKategori_masakan());
+    public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
+        ResepDAO resep= result2.get(i);
+        myViewHolder.mNamaResep.setText(resep.getNama_resep_makanan());
+        myViewHolder.mKategori.setText(resep.getKategori_masakan());
+
     }
 
     @Override
@@ -40,8 +49,10 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
        private TextView mNamaResep;
        private TextView mKategori;
 
+
        public MyViewHolder(@NonNull View itemView){
            super(itemView);
+
            mNamaResep=(TextView)itemView.findViewById(R.id.user_resep_menu);
            mKategori=(TextView)itemView.findViewById(R.id.kategori_masakan_menu);
        }
