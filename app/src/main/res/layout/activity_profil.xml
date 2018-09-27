@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
             android:layout_marginBottom="59dp"
-            android:text="nama usernya"
+            android:text="Nama"
             android:textAlignment="center"
             android:textColor="@color/white" />
 
@@ -45,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/nama_profil"
             android:layout_marginTop="-59dp"
-            android:text="email usernya"
+            android:text="@string/email"
             android:textAlignment="center"
             android:textColor="@color/white" />
 
@@ -99,8 +99,9 @@
             android:layout_width="132dp"
             android:layout_height="125dp"
             android:layout_below="@+id/nama_makanan"
-            app:srcCompat="@drawable/ic_launcher_background" />
-
+            app:srcCompat="@drawable/ic_launcher_background"
+            tools:ignore="UnknownId,VectorDrawableCompat" />
+        <!--itu yg tools ignore, ak tambahin karena awalnya layout ini error, kalo terjadi apa apa, delete aja itunya yaa-->
         <TextView
             android:id="@+id/textView12"
             android:layout_width="wrap_content"
