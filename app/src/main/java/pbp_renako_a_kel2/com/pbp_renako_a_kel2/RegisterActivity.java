@@ -27,7 +27,8 @@ private EditText mConfirmPassword;
 private Button mRegisterButton;
 private Button mCancelButton;
 SessionManager session;
-//udah isa email verif
+//udah isa email verif ye
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
