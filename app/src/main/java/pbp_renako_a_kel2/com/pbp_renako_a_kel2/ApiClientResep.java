@@ -17,6 +17,9 @@ public interface ApiClientResep {
     @GET("list_resep_all.php")
     Call<resep_model> getResepall();
 
+    @GET("list_resep_user.php")
+    Call<resep_model> getResepUser();
+
     @POST("insert_resep_process.php")
     @FormUrlEncoded
     Call<JsonObject> regResep  (@Field("nama_resep_masakan") String nama_resep_masakan,

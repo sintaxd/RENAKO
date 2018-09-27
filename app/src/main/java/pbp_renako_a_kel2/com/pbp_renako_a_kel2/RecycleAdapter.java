@@ -2,24 +2,18 @@ package pbp_renako_a_kel2.com.pbp_renako_a_kel2;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.JsonObject;
-
-import java.util.ArrayList;
 import java.util.List;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
     private Context context;
-    private List<resep_data> result2=new ArrayList<>();
+    private List<resep_data> result2;
 
     public RecycleAdapter(Context context,List<resep_data> result2){
         this.context=context;
@@ -27,16 +21,16 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     }
 
     @Override
-    public RecycleAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i)
+    public MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i)
     {
-        View itemView = LayoutInflater.from(viewGroup.getContext())
+        View itemView = LayoutInflater.from(context)
                 .inflate(R.layout.activity_recycle_adapter, viewGroup, false);
-
-        return new RecycleAdapter.MyViewHolder(itemView);
+        final MyViewHolder holder=new MyViewHolder(viewGroup);
+        return holder;
     }
 
     @Override
-    public void onBindViewHolder(RecycleAdapter.MyViewHolder myViewHolder, int i) {
+    public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
         resep_data resep= result2.get(i);
         myViewHolder.mNamaResep.setText(resep.getNamaResepMasakan());
         myViewHolder.mKategori.setText(resep.getKategoriMasakan());

@@ -4,13 +4,13 @@ import java.util.List;
 
 public class Value {
     List<UserDAO> result;
-    List<ResepDAO> resultR;
+    List<resep_data> resultR;
 
 
     public List<UserDAO> getResult(){
         return result;
     }
-    public List<ResepDAO> geResult(){
+    public List<resep_data> geResult(){
         return resultR;
     }
 }
