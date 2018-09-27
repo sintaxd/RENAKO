@@ -24,7 +24,7 @@ public class EditKataSandiActivity extends AppCompatActivity {
 
     SessionManager session;
     private EditText ksLama,ksBaru,ksConf;
-    private String tempPass;
+    private String tempPass,tempEmail;
     private Button mbtnSimpan_EKS, mBtnBatal_EKS;
 
 
@@ -59,6 +59,7 @@ public class EditKataSandiActivity extends AppCompatActivity {
         ksBaru=findViewById(R.id.ksBaru);
         ksConf=findViewById(R.id.ksConf);
         tempPass=session.pref.getString("pass", "");
+        tempEmail=session.pref.getString("email", "");
         mbtnSimpan_EKS = findViewById(R.id.btnSimpan_EKS);
         mBtnBatal_EKS = findViewById(R.id.btnBatal_EKS);
     }
@@ -73,36 +74,49 @@ public class EditKataSandiActivity extends AppCompatActivity {
         {
             Toast.makeText(this, "Kolom tidak boleh kosong !", Toast.LENGTH_SHORT).show();
         }
+
+        else if(ksLama.getText().toString().equalsIgnoreCase(tempPass))
+        {
+            if(ksBaru.getText().toString().equalsIgnoreCase(ksConf.getText().toString()))
+            {
+                //Post data into API
+                //Build Retroifit
+                Gson gson = new GsonBuilder()
+                        .setLenient()
+                        .create();
+
+                Retrofit.Builder builder=new Retrofit.
+                        Builder().baseUrl("http://renakomaster.000webhostapp.com").
+                        addConverterFactory(GsonConverterFactory.create(gson));
+                Retrofit retrofit=builder.build();
+                ApiClient apiClient=retrofit.create(ApiClient.class);
+                //Call api yang dibuat di php
+                Call<JsonObject> userDAOCall=apiClient.editPass(ksBaru.getText().toString(),tempEmail);
+
+                userDAOCall.enqueue(new Callback<JsonObject>() {
+                    @Override
+
+                    public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
+                        Toast.makeText(EditKataSandiActivity.this,"Edit Kata Sandi Berhasil",Toast.LENGTH_SHORT).show();
+                        startIntent();
+                    }
+
+                    @Override
+                    public void onFailure(Call<JsonObject> call, Throwable t) {
+                        Toast.makeText(EditKataSandiActivity.this,"Network connection failed",Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+            else
+            {
+                Toast.makeText(EditKataSandiActivity.this,"Kata sandi baru tidak sesuai",Toast.LENGTH_SHORT).show();
+            }
+
+
+        }
         else
         {
-            //Post data into API
-            //Build Retroifit
-            Gson gson = new GsonBuilder()
-                    .setLenient()
-                    .create();
-
-            Retrofit.Builder builder=new Retrofit.
-                    Builder().baseUrl("http://renakomaster.000webhostapp.com").
-                    addConverterFactory(GsonConverterFactory.create(gson));
-            Retrofit retrofit=builder.build();
-            ApiClient apiClient=retrofit.create(ApiClient.class);
-            //Call api yang dibuat di php
-            Call<JsonObject> userDAOCall=apiClient.editPass(ksLama.getText().toString(),
-                    ksBaru.getText().toString(),tempPass);
-
-            userDAOCall.enqueue(new Callback<JsonObject>() {
-                @Override
-
-                public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                    Toast.makeText(EditKataSandiActivity.this,"Edit Success",Toast.LENGTH_SHORT).show();
-                    startIntent();
-                }
-
-                @Override
-                public void onFailure(Call<JsonObject> call, Throwable t) {
-                    Toast.makeText(EditKataSandiActivity.this,"Network connection failed",Toast.LENGTH_SHORT).show();
-                }
-            });
+            Toast.makeText(EditKataSandiActivity.this,"Kata sandi lama tidak sesuai",Toast.LENGTH_SHORT).show();
         }
     }
 }
