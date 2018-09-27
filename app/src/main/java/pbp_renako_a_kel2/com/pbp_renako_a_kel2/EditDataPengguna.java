@@ -57,8 +57,6 @@ public class EditDataPengguna extends AppCompatActivity {
         eSimpan=findViewById(R.id.btnSimpan_EDP);
         eBatal=findViewById(R.id.btnBatal_EDP);
         tempEmail=session.pref.getString("email", "");
-
-
     }
 
     private void onClickUpdate(){
@@ -87,7 +85,7 @@ public class EditDataPengguna extends AppCompatActivity {
                 @Override
 
                 public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                    Toast.makeText(EditDataPengguna.this,"Edit Success",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(EditDataPengguna.this,"Edit Profile Success",Toast.LENGTH_SHORT).show();
                     startIntent();
                 }
 
