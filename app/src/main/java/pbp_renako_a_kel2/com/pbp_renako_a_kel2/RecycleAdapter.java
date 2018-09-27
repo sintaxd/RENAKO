@@ -5,6 +5,7 @@ import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
@@ -18,25 +19,28 @@ import java.util.List;
 
 public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHolder> {
     private Context context;
-    private List<ResepDAO> result2;
+    private List<resep_data> result2=new ArrayList<>();
 
-    public RecycleAdapter(Context context,List<ResepDAO> result2){
+    public RecycleAdapter(Context context,List<resep_data> result2){
         this.context=context;
         this.result2=result2;
     }
 
-
-    @NonNull
     @Override
-    public MyViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
-        return null;
+    public RecycleAdapter.MyViewHolder onCreateViewHolder(ViewGroup viewGroup, int i)
+    {
+        View itemView = LayoutInflater.from(viewGroup.getContext())
+                .inflate(R.layout.activity_recycle_adapter, viewGroup, false);
+
+        return new RecycleAdapter.MyViewHolder(itemView);
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder myViewHolder, int i) {
-        ResepDAO resep= result2.get(i);
-        myViewHolder.mNamaResep.setText(resep.getNama_resep_makanan());
-        myViewHolder.mKategori.setText(resep.getKategori_masakan());
+    public void onBindViewHolder(RecycleAdapter.MyViewHolder myViewHolder, int i) {
+        resep_data resep= result2.get(i);
+        myViewHolder.mNamaResep.setText(resep.getNamaResepMasakan());
+        myViewHolder.mKategori.setText(resep.getKategoriMasakan());
+        myViewHolder.mPembuat.setText(resep.getUserName());
 
     }
 
@@ -46,22 +50,23 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-       private TextView mNamaResep;
-       private TextView mKategori;
+        private TextView mNamaResep;
+        private TextView mKategori;
+        private TextView mPembuat;
 
+        public MyViewHolder(@NonNull View itemView){
+            super(itemView);
 
-       public MyViewHolder(@NonNull View itemView){
-           super(itemView);
+            mNamaResep=(TextView)itemView.findViewById(R.id.txtNama_masakan_menu);
+            mKategori=(TextView)itemView.findViewById(R.id.kategori_masakan_menu);
+            mPembuat=(TextView)itemView.findViewById(R.id.user_resep_menu);
+        }
 
-           mNamaResep=(TextView)itemView.findViewById(R.id.user_resep_menu);
-           mKategori=(TextView)itemView.findViewById(R.id.kategori_masakan_menu);
-       }
-
-       @Override
-       public void onClick(View view) {
-           Toast.makeText(context,"Anda mengklik saya",Toast.LENGTH_SHORT).show();
-       }
-   }
+        @Override
+        public void onClick(View view) {
+            Toast.makeText(context,"Anda mengklik saya",Toast.LENGTH_SHORT).show();
+        }
+    }
 
 
 }
