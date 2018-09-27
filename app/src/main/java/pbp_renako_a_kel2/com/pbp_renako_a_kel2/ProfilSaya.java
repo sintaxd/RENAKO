@@ -2,6 +2,8 @@ package pbp_renako_a_kel2.com.pbp_renako_a_kel2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +21,9 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonObject;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -28,6 +33,10 @@ public class ProfilSaya extends AppCompatActivity {
     private TextView setEmail;
     private TextView setNama;
     private String tempNama;
+    private List<resep_data> mListResep;
+    private RecycleAdapter recycleAdapter;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +51,11 @@ public class ProfilSaya extends AppCompatActivity {
         setEmail.setText(session.pref.getString("email", ""));
         setNama = (TextView)findViewById(R.id.nama_profil);
 
+        showUser();
+        showMenu();
+    }
+
+    public void showUser(){
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -51,11 +65,26 @@ public class ProfilSaya extends AppCompatActivity {
                 addConverterFactory(GsonConverterFactory.create(gson));
         Retrofit retrofit=builder.build();
         ApiClient apiClient=retrofit.create(ApiClient.class);
-        Call<JsonObject> userDAOCall=apiClient.getUser(tempNama);
-        setNama.setText(tempNama);
+        Call<String> userDAOCall=apiClient.getUser(setEmail.getText().toString());
+
+        userDAOCall.enqueue(new Callback<String>() {
+            @Override
+            public void onResponse(Call<String> call, Response<String> response) {
+
+            }
+            @Override
+            public void onFailure(Call<String> call, Throwable t) {
+                Toast.makeText(ProfilSaya.this,"Network connection failed",Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     public void showMenu(){
+        recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        mListResep = new ArrayList<>();
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ProfilSaya.this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(recycleAdapter);
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -67,7 +96,7 @@ public class ProfilSaya extends AppCompatActivity {
         Retrofit retrofit=builder.build();
         ApiClientResep apiClientResep=retrofit.create(ApiClientResep.class);
 
-        Call<resep_model> ResepDAOCall=apiClientResep.getResepUser();
+        Call<resep_model> ResepDAOCall=apiClientResep.getResepUser(setEmail.getText().toString());
 
 
         ResepDAOCall.enqueue(new Callback<resep_model>() {
@@ -75,15 +104,15 @@ public class ProfilSaya extends AppCompatActivity {
             public void onResponse(Call<resep_model> call, Response<resep_model> response) {
                 try {
                     recycleAdapter.notifyDataSetChanged();
-                    recycleAdapter = new RecycleAdapter(getContext(), response.body().getResep());
+                    recycleAdapter = new RecycleAdapter(ProfilSaya.this, response.body().getResep());
 
                 } catch (Exception e) {
-                    Toast.makeText(getContext(), "Belum ada resep!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProfilSaya.this, "Belum ada resep!", Toast.LENGTH_SHORT).show();
                 }
             }
             @Override
             public void onFailure(Call<resep_model> call, Throwable t) {
-                Toast.makeText(getContext(),"Network connection failed",Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfilSaya.this,"Network connection failed",Toast.LENGTH_SHORT).show();
             }
         });
     }
