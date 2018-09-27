@@ -38,17 +38,33 @@ public class homeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         View view= inflater.inflate(R.layout.fragment_home, container, false);
-
-        Gson gson = new GsonBuilder()
-                .setLenient()
-                .create();
-
         recyclerView = (RecyclerView)view.findViewById(R.id.recycler_view);
+        recycleAdapter=new RecycleAdapter(getActivity(),mListResep);
         mListResep = new ArrayList<>();
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(recycleAdapter);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
+        showList();
+        mTambahResep=(Button)view.findViewById(R.id.btnTambah_resep_menu);
+        input();
+        return view;
+    }
+
+    public void input(){
+        mTambahResep.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent=new Intent(getActivity(),TambahResep.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    public void showList(){
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
         Retrofit.Builder builder=new Retrofit.
                 Builder().baseUrl("http://renakomaster.000webhostapp.com").
                 addConverterFactory(GsonConverterFactory.create(gson));
@@ -63,6 +79,7 @@ public class homeFragment extends Fragment {
                 try {
                     recycleAdapter.notifyDataSetChanged();
                     recycleAdapter = new RecycleAdapter(getContext(), response.body().getResep());
+                    recyclerView.setAdapter(recycleAdapter);
 
                 } catch (Exception e) {
                     Toast.makeText(getContext(), "Belum ada resep!", Toast.LENGTH_SHORT).show();
@@ -74,15 +91,6 @@ public class homeFragment extends Fragment {
             }
         });
 
-        mTambahResep=(Button)view.findViewById(R.id.btnTambah_resep_menu);
-        mTambahResep.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent=new Intent(getActivity(),TambahResep.class);
-                startActivity(intent);
-            }
-        });
-        return view;
     }
 
 }

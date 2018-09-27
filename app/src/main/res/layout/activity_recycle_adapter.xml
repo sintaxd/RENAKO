@@ -14,7 +14,7 @@
         android:layout_marginTop="61dp"
         android:background="@drawable/border_mainmenu"
         android:orientation="vertical"
-        android:layout_margin="5dp">
+        android:layout_marginBottom="1dp">
 
         <TextView
             android:id="@+id/txtNama_masakan_menu"
