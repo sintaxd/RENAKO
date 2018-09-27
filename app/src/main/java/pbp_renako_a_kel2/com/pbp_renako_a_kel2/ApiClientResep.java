@@ -1,5 +1,6 @@
 package pbp_renako_a_kel2.com.pbp_renako_a_kel2;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 
 import retrofit2.Call;
@@ -11,7 +12,10 @@ import retrofit2.http.POST;
 public interface ApiClientResep {
 
     @GET("show_resep_process.php")
-    Call<JsonObject> getResep();
+    Call<JsonArray> getResep();
+
+    @GET("list_resep_all.php")
+    Call<resep_model> getResepall();
 
     @POST("insert_resep_process.php")
     @FormUrlEncoded
