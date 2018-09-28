@@ -95,7 +95,7 @@ SessionManager session;
                 userDAOCall.enqueue(new Callback<JsonObject>() {
                     @Override
                     public void onResponse(Call<JsonObject> call, Response<JsonObject> response) {
-                        Toast.makeText(RegisterActivity.this,"Register Success",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(RegisterActivity.this,"Register Berhasil, Silahkan Verifikasi Email Anda",Toast.LENGTH_SHORT).show();
                         startIntent();
                     }
                     @Override

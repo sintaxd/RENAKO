@@ -67,7 +67,7 @@ public class EditKataSandiActivity extends AppCompatActivity {
     }
 
     private void startIntent(){
-        Intent intent=new Intent(getApplicationContext(),PengaturanActivity.class);
+        Intent intent=new Intent(getApplicationContext(),MainActivity.class);
         startActivity(intent);
     }
 

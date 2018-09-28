@@ -3,79 +3,17 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+
     android:background="@color/graylight">
 
-    <RelativeLayout
+        <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycler_view"
         android:layout_width="match_parent"
-        android:layout_height="156dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/border_mainmenu"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/txtNama_masakan_menu"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/border_mainmenu"
-            android:paddingLeft="10dp"
-            android:text="nama makanannya"
-            android:textSize="20dp" />
-
-        <ImageView
-            android:id="@+id/image_masakan_menu"
-            android:layout_width="129dp"
-            android:layout_height="128dp"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentStart="true"
-            app:srcCompat="@android:drawable/sym_def_app_icon" />
-
-        <LinearLayout
-            android:id="@+id/layoutket"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/txtNama_masakan_menu"
-            android:layout_toEndOf="@+id/image_masakan_menu"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView17"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Pembuat :" />
-
-            <TextView
-                android:id="@+id/textView18"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="Kategori :" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="187dp"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/txtNama_masakan_menu"
-            android:layout_marginStart="5dp"
-            android:layout_toEndOf="@+id/layoutket"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/user_resep_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:text="Nama Pembuatnya" />
-
-            <TextView
-                android:id="@+id/kategori_masakan_menu"
-                android:layout_width="match_parent"
-                android:layout_height="30dp"
-                android:text="Kategorinya" />
-
-        </LinearLayout>
-
-
-    </RelativeLayout>
-
-
+        android:layout_height="600dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginEnd="1pt"
+        android:layout_marginStart="1pt"
+        android:layout_marginTop="60dp"
+        />
 </RelativeLayout>

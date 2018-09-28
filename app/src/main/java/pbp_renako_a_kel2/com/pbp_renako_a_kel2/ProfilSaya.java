@@ -2,6 +2,7 @@ package pbp_renako_a_kel2.com.pbp_renako_a_kel2;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.EditText;
@@ -32,7 +33,7 @@ public class ProfilSaya extends AppCompatActivity {
     SessionManager session;
     private TextView setEmail;
     private TextView setNama;
-    private String tempNama;
+    private String tempNama,tempEmail;
     private List<resep_data> mListResep;
     private RecycleAdapter recycleAdapter;
     private RecyclerView recyclerView;
@@ -48,10 +49,11 @@ public class ProfilSaya extends AppCompatActivity {
 
         session = new SessionManager(getApplicationContext());
         setEmail =(TextView)findViewById(R.id.email_profil);
+        tempEmail=session.pref.getString("email", "");
         setEmail.setText(session.pref.getString("email", ""));
         setNama = (TextView)findViewById(R.id.nama_profil);
 
-        showUser();
+        //showUser();
         showMenu();
     }
 
@@ -81,10 +83,11 @@ public class ProfilSaya extends AppCompatActivity {
 
     public void showMenu(){
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
+        recycleAdapter=new RecycleAdapter(this,mListResep);
         mListResep = new ArrayList<>();
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(ProfilSaya.this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(layoutManager);
-        recyclerView.setAdapter(recycleAdapter);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
 
         Gson gson = new GsonBuilder()
                 .setLenient()
@@ -95,17 +98,14 @@ public class ProfilSaya extends AppCompatActivity {
                 addConverterFactory(GsonConverterFactory.create(gson));
         Retrofit retrofit=builder.build();
         ApiClientResep apiClientResep=retrofit.create(ApiClientResep.class);
-
-        Call<resep_model> ResepDAOCall=apiClientResep.getResepUser(setEmail.getText().toString());
-
-
+        Call<resep_model> ResepDAOCall=apiClientResep.getResepUser();
         ResepDAOCall.enqueue(new Callback<resep_model>() {
             @Override
             public void onResponse(Call<resep_model> call, Response<resep_model> response) {
                 try {
                     recycleAdapter.notifyDataSetChanged();
                     recycleAdapter = new RecycleAdapter(ProfilSaya.this, response.body().getResep());
-
+                    recyclerView.setAdapter(recycleAdapter);
                 } catch (Exception e) {
                     Toast.makeText(ProfilSaya.this, "Belum ada resep!", Toast.LENGTH_SHORT).show();
                 }

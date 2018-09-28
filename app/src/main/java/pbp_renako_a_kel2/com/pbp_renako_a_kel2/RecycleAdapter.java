@@ -3,6 +3,7 @@ package pbp_renako_a_kel2.com.pbp_renako_a_kel2;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -33,11 +34,22 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(final RecycleAdapter.MyViewHolder myViewHolder, int i) {
-        resep_data resep= result.get(i);
+        final resep_data resep= result.get(i);
         myViewHolder.mNamaResep.setText(resep.getNamaResepMasakan());
         myViewHolder.mKategori.setText(resep.getKategoriMasakan());
         myViewHolder.mPembuat.setText(resep.getUserName());
-
+        myViewHolder.kotak.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(context, TampilResep.class);
+                intent.putExtra("pembuat", resep.getUserName());
+                intent.putExtra("kategori", resep.getKategoriMasakan());
+                intent.putExtra("cara", resep.getCaraMemasak());
+                intent.putExtra("resep", resep.getNamaResepMasakan());
+                intent.putExtra("alat", resep.getAlatBahanMasakan());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -49,24 +61,21 @@ public class RecycleAdapter extends RecyclerView.Adapter<RecycleAdapter.MyViewHo
         public TextView mNamaResep;
         public TextView mKategori;
         public TextView mPembuat;
-
+        public TextView mCaraMasak;
+        public Context mContext;
+        public ConstraintLayout kotak;
         public MyViewHolder(View itemView){
             super(itemView);
-
+            kotak = itemView.findViewById(R.id.kotak);
             mNamaResep=(TextView)itemView.findViewById(R.id.txtNama_masakan_menu);
             mKategori=(TextView)itemView.findViewById(R.id.kategori_masakan_menu);
             mPembuat=(TextView)itemView.findViewById(R.id.user_resep_menu);
 
+
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    Intent intent = new Intent(context, TampilResep.class);
-//                    intent.putExtra("nama_resep", title.getText().toString());
-//                    intent.putExtra("cara", caraMasak.getText().toString());
-//                    intent.putExtra("resep", resep.getText().toString());
-//                    intent.putExtra("id_resep", id);
-//                    context.startActivity(intent);
-//                    Toast.makeText(mContext, "Berhasil", Toast.LENGTH_SHORT).show();
+
                 }
             });
         }

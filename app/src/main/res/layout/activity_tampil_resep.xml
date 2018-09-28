@@ -27,7 +27,7 @@
         android:background="@color/common_google_signin_btn_text_light_default">
 
         <TextView
-            android:id="@+id/textView2"
+            android:id="@+id/namaResep"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"

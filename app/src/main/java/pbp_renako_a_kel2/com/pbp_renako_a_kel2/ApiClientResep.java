@@ -17,9 +17,17 @@ public interface ApiClientResep {
     @GET("list_resep_all.php")
     Call<resep_model> getResepall();
 
-    @GET("list_resep_user.php")
-    Call<resep_model> getResepUser(@Field("tempEmail") String tempEmail
-    );
+    @GET("list_resep_ringan.php")
+    Call<resep_model> getResepringan();
+
+    @GET("list_resep_utama.php")
+    Call<resep_model> getReseputama();
+
+    @GET("list_resep_penutup.php")
+    Call<resep_model> getReseppenutup();
+
+    @GET("list_resep_user.php?temp_email=tempEmail")
+    Call<resep_model> getResepUser();
 
     @POST("insert_resep_process.php")
     @FormUrlEncoded

@@ -152,7 +152,7 @@
         app:srcCompat="@drawable/logo_renako" />
 
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/spinner1"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:layout_marginBottom="320dp"

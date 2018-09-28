@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(i);
                         finish();
                     }else
-                        Toast.makeText(MainActivity.this,"Email atau Password salah",Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MainActivity.this,"Email,Password Salah atau Belum Verifikasi",Toast.LENGTH_SHORT).show();
                 }
 
                 @Override

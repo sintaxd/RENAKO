@@ -48,6 +48,7 @@ public class TambahResep extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i=new Intent(TambahResep.this,main_menu.class);
                 startActivity(i);
+//                Toast.makeText(TambahResep.this, "Hasil Spinner : " + spinner.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -62,8 +63,7 @@ public class TambahResep extends AppCompatActivity {
         namaMasakan=findViewById(R.id.txtNama_Masakan);
         alatbahan= findViewById(R.id.txtAlatBahan_TambahResep);
         caramasak=findViewById(R.id.txtCaraMemasak_TambahResep);
-        spinner=(Spinner) findViewById(R.id.spinner);
-        kategori=spinner.getSelectedItem().toString();
+        spinner=(Spinner) findViewById(R.id.spinner1);
         cancel=findViewById(R.id.btnCancel);
         save=findViewById(R.id.btnSave);
         tempEmail=session.pref.getString("email", "");
@@ -89,7 +89,7 @@ public class TambahResep extends AppCompatActivity {
 
             //Call api yang dibuat di php
             Call<JsonObject> ResepDAOCall=apiClientResep.regResep(namaMasakan.getText().toString(),
-                    alatbahan.getText().toString(),caramasak.getText().toString(),kategori,tempEmail);
+                    alatbahan.getText().toString(),caramasak.getText().toString(),spinner.getSelectedItem().toString(),tempEmail);
 
             ResepDAOCall.enqueue(new Callback<JsonObject>() {
                 @Override

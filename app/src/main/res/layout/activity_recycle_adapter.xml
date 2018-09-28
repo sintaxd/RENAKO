@@ -2,28 +2,28 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kotak"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".RecycleAdapter">
+    android:layout_height="wrap_content"
+    tools:context=".RecycleAdapter"
+    android:layout_marginBottom="2dp">
 
     <RelativeLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="156dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="61dp"
         android:background="@drawable/border_mainmenu"
-        android:orientation="vertical"
-        android:layout_marginBottom="1dp">
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/txtNama_masakan_menu"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="nama makanannya"
-            android:textSize="20dp"
             android:background="@drawable/border_mainmenu"
-            android:paddingLeft="10dp"/>
+            android:paddingLeft="10dp"
+            android:text="nama makanannya"
+            android:textSize="20dp" />
 
         <ImageView
             android:id="@+id/image_masakan_menu"
