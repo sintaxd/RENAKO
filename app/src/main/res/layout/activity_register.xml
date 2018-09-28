@@ -10,18 +10,15 @@
         android:id="@+id/txtShowRegister"
         android:layout_width="167dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="432dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="29dp"
         android:text="Register Akun"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnBatal_Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/ic_person"
@@ -129,36 +126,15 @@
 
     <Button
         android:id="@+id/btnSimpan_Register"
-        android:layout_width="0dp"
+        android:layout_width="233dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="28dp"
-        android:layout_marginEnd="84dp"
-        android:layout_marginTop="28dp"
-        android:background="@color/red"
         android:text="Daftar"
-        android:textColor="#f5f6fa"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnBatal_Register"
-        app:layout_constraintTop_toBottomOf="@+id/txtConfirmPassword_Register"
-        app:layout_constraintVertical_bias="0.0"
-        tools:text="Daftar" />
-
-    <Button
-        android:id="@+id/btnBatal_Register"
-        android:layout_width="0dp"
-        android:layout_height="48dp"
-        android:layout_marginBottom="28dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginStart="85dp"
-        android:background="@color/red"
-        android:text="Batal"
-        android:textColor="#f5f6fa"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnSimpan_Register"
-        app:layout_constraintHorizontal_chainStyle="spread_inside"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtShowRegister"
-        tools:text="Batal" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.946"
+        tools:text="Daftar" />
 
 </android.support.constraint.ConstraintLayout>

@@ -25,7 +25,7 @@ private EditText mEmail;
 private EditText mPassword;
 private EditText mConfirmPassword;
 private Button mRegisterButton;
-private Button mCancelButton;
+
 SessionManager session;
 //udah isa email verif ye
     
@@ -44,13 +44,7 @@ SessionManager session;
                 onClickRegister();
             }
         });
-        mCancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i=new Intent(RegisterActivity.this,MainActivity.class);
-                startActivity(i);
-            }
-        });
+
 
 
     }
@@ -60,7 +54,7 @@ SessionManager session;
         mPassword=findViewById(R.id.txtPassword_Register2);
         mConfirmPassword=findViewById(R.id.txtConfirmPassword_Register);
         mRegisterButton=findViewById(R.id.btnSimpan_Register);
-        mCancelButton=findViewById(R.id.btnBatal_Register);
+
     }
 
     private void startIntent(){
