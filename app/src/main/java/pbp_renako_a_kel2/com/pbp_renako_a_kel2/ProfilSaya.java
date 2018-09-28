@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -54,7 +55,7 @@ public class ProfilSaya extends AppCompatActivity {
         setNama = (TextView)findViewById(R.id.nama_profil);
 
         //showUser();
-        showMenu();
+        //showMenu();
     }
 
     public void showUser(){
@@ -85,10 +86,10 @@ public class ProfilSaya extends AppCompatActivity {
         recyclerView = (RecyclerView)findViewById(R.id.recycler_view);
         recycleAdapter=new RecycleAdapter(this,mListResep);
         mListResep = new ArrayList<>();
-        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setItemAnimator(new DefaultItemAnimator());
-
+        recyclerView.setAdapter(recycleAdapter);
         Gson gson = new GsonBuilder()
                 .setLenient()
                 .create();
@@ -98,11 +99,12 @@ public class ProfilSaya extends AppCompatActivity {
                 addConverterFactory(GsonConverterFactory.create(gson));
         Retrofit retrofit=builder.build();
         ApiClientResep apiClientResep=retrofit.create(ApiClientResep.class);
-        Call<resep_model> ResepDAOCall=apiClientResep.getResepUser();
+        Call<resep_model> ResepDAOCall=apiClientResep.getResepUser(session.pref.getString("email", ""));
         ResepDAOCall.enqueue(new Callback<resep_model>() {
             @Override
             public void onResponse(Call<resep_model> call, Response<resep_model> response) {
                 try {
+                    Log.d("TAG", response.body().getResep().toString());
                     recycleAdapter.notifyDataSetChanged();
                     recycleAdapter = new RecycleAdapter(ProfilSaya.this, response.body().getResep());
                     recyclerView.setAdapter(recycleAdapter);

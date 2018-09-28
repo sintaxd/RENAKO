@@ -8,6 +8,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface ApiClientResep {
 
@@ -26,8 +27,8 @@ public interface ApiClientResep {
     @GET("list_resep_penutup.php")
     Call<resep_model> getReseppenutup();
 
-    @GET("list_resep_user.php?temp_email=tempEmail")
-    Call<resep_model> getResepUser();
+    @GET("list_resep_user.php")
+    Call<resep_model> getResepUser(@Query("temp_email") String temp_email);
 
     @POST("insert_resep_process.php")
     @FormUrlEncoded
